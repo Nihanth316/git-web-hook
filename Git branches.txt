@@ -1,0 +1,184 @@
+[root@ip-172-31-80-173 GIT]# ls
+[root@ip-172-31-80-173 GIT]# git --version
+git version 2.37.1
+[root@ip-172-31-80-173 GIT]# git init
+Reinitialized existing Git repository in /root/GIT/.git/
+[root@ip-172-31-80-173 GIT]# ls -al
+total 0
+drwxr-xr-x 3 root root  18 Aug  4 17:51 .
+dr-xr-x--- 4 root root 135 Aug  4 17:51 ..
+drwxr-xr-x 7 root root 119 Aug  4 17:56 .git
+[root@ip-172-31-80-173 GIT]# clear
+[root@ip-172-31-80-173 GIT]# git config --global user.name
+[root@ip-172-31-80-173 GIT]# Nihanth
+bash: Nihanth: command not found
+[root@ip-172-31-80-173 GIT]# git config --global user.name "Nihanth"
+[root@ip-172-31-80-173 GIT]# git config --global user.mail "nihanthgnkr@gmail.com"
+[root@ip-172-31-80-173 GIT]# vim file1.txt
+[root@ip-172-31-80-173 GIT]# git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+[root@ip-172-31-80-173 GIT]# git add file1.txt
+[root@ip-172-31-80-173 GIT]# git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   file1.txt
+
+[root@ip-172-31-80-173 GIT]# git commit -m "first file "
+[master (root-commit) 26dd46a] first file
+ Committer: Nihanth <root@ip-172-31-80-173.ec2.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 3 insertions(+)
+ create mode 100644 file1.txt
+[root@ip-172-31-80-173 GIT]# git log
+commit 26dd46a1b563ff97d4023337f3acba02a98a90a3 (HEAD -> master)
+Author: Nihanth <root@ip-172-31-80-173.ec2.internal>
+Date:   Thu Aug 4 18:00:11 2022 +0000
+
+    first file
+[root@ip-172-31-80-173 GIT]# touch file2.txt
+[root@ip-172-31-80-173 GIT]# git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+[root@ip-172-31-80-173 GIT]# git add .
+[root@ip-172-31-80-173 GIT]# git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   file2.txt
+
+[root@ip-172-31-80-173 GIT]# git commit -m file2.txt "second file"
+error: pathspec 'second file' did not match any file(s) known to git
+[root@ip-172-31-80-173 GIT]# git add .
+[root@ip-172-31-80-173 GIT]# git commit -m "second file added"
+[master 739de03] second file added
+ Committer: Nihanth <root@ip-172-31-80-173.ec2.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 file2.txt
+[root@ip-172-31-80-173 GIT]# git config --global user.name "Nihanth"
+[root@ip-172-31-80-173 GIT]# git config --global user.email "nihanthgnkr@gmail.com"
+[root@ip-172-31-80-173 GIT]# git log
+commit 739de03c2c493ac2a81b3c88c57e538a9130d948 (HEAD -> master)
+Author: Nihanth <root@ip-172-31-80-173.ec2.internal>
+Date:   Thu Aug 4 18:03:11 2022 +0000
+
+    second file added
+
+commit 26dd46a1b563ff97d4023337f3acba02a98a90a3
+Author: Nihanth <root@ip-172-31-80-173.ec2.internal>
+Date:   Thu Aug 4 18:00:11 2022 +0000
+
+    first file
+[root@ip-172-31-80-173 GIT]# git log -oneline
+fatal: unrecognized argument: -oneline
+[root@ip-172-31-80-173 GIT]# git log --oneline
+739de03 (HEAD -> master) second file added
+26dd46a first file
+[root@ip-172-31-80-173 GIT]# git restore 739de03
+error: pathspec '739de03' did not match any file(s) known to git
+[root@ip-172-31-80-173 GIT]# git rm --cached file2.txt
+rm 'file2.txt'
+[root@ip-172-31-80-173 GIT]# ls
+file1.txt  file2.txt
+[root@ip-172-31-80-173 GIT]# git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    file2.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file2.txt
+
+[root@ip-172-31-80-173 GIT]# git add .
+[root@ip-172-31-80-173 GIT]# git commit -m "delected"
+On branch master
+nothing to commit, working tree clean
+[root@ip-172-31-80-173 GIT]# git log --oneline
+739de03 (HEAD -> master) second file added
+26dd46a first file
+[root@ip-172-31-80-173 GIT]# git revert 739de03
+[master 7102cbb] Revert "second file added"
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 file2.txt
+[root@ip-172-31-80-173 GIT]# git log --oneline
+7102cbb (HEAD -> master) Revert "second file added"
+739de03 second file added
+26dd46a first file
+[root@ip-172-31-80-173 GIT]# ls
+file1.txt
+[root@ip-172-31-80-173 GIT]# git branch
+* master
+[root@ip-172-31-80-173 GIT]# git branch Devops
+[root@ip-172-31-80-173 GIT]# git branch
+  Devops
+* master
+[root@ip-172-31-80-173 GIT]# git branch show
+[root@ip-172-31-80-173 GIT]# git branch
+  Devops
+* master
+  show
+[root@ip-172-31-80-173 GIT]# git branch checkout
+[root@ip-172-31-80-173 GIT]# ls
+file1.txt
+[root@ip-172-31-80-173 GIT]# git branch
+  Devops
+  checkout
+* master
+  show
+[root@ip-172-31-80-173 GIT]# git checkout
+[root@ip-172-31-80-173 GIT]# ls
+file1.txt
+[root@ip-172-31-80-173 GIT]# git branch jenkins
+[root@ip-172-31-80-173 GIT]# git branch
+  Devops
+  checkout
+  jenkins
+* master
+  show
+[root@ip-172-31-80-173 GIT]# git branch -d show
+Deleted branch show (was 7102cbb).
+[root@ip-172-31-80-173 GIT]# git branch
+  Devops
+  checkout
+  jenkins
+* master
+[root@ip-172-31-80-173 GIT]# git branch "master"
+fatal: a branch named 'master' already exists
+[root@ip-172-31-80-173 GIT]#
