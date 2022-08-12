@@ -1,0 +1,602 @@
+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
+
+
+
+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
+
+
+aug6
+
+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
+
+echo "# jenkins" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Nihanth316/jenkins.git
+git push -u origin main
+
+git remote add origin https://github.com/Nihanth316/jenkins.git
+git branch -M main
+git push -u origin main
+
+
+login as: ec2-user
+Authenticating with public key "imported-openssh-key"
+Last login: Sat Aug  6 08:07:17 2022 from 49.37.156.29
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-2/
+[ec2-user@ip-172-31-80-173 ~]$ cd
+[ec2-user@ip-172-31-80-173 ~]$ ls
+[ec2-user@ip-172-31-80-173 ~]$ cd ..
+[ec2-user@ip-172-31-80-173 home]$ ls
+ec2-user
+[ec2-user@ip-172-31-80-173 home]$ sudo su
+[root@ip-172-31-80-173 home]# ls
+ec2-user
+[root@ip-172-31-80-173 home]# cd ..
+[root@ip-172-31-80-173 /]# ls
+bin   dev  home  lib64  media  nihanth  proc  run   srv  tmp  var
+boot  etc  lib   local  mnt    opt      root  sbin  sys  usr
+[root@ip-172-31-80-173 /]# ls
+bin   dev  home  lib64  media  nihanth  proc  run   srv  tmp  var
+boot  etc  lib   local  mnt    opt      root  sbin  sys  usr
+[root@ip-172-31-80-173 /]# cd
+[root@ip-172-31-80-173 ~]# ls
+GIT
+[root@ip-172-31-80-173 ~]# cd GIT
+[root@ip-172-31-80-173 GIT]# git branch
+  Devops
+  checkout
+  dev
+  jenkins
+* main
+  master
+[root@ip-172-31-80-173 GIT]# git push
+fatal: No configured push destination.
+Either specify the URL from the command-line or configure a remote repository using
+
+    git remote add <name> <url>
+
+and then push using the remote name
+
+    git push <name>
+
+[root@ip-172-31-80-173 GIT]# git remote add file1.txt
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branches
+    --tags                import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=(push|fetch)]
+                          set up remote as a mirror to push to or fetch from
+
+[root@ip-172-31-80-173 GIT]# git remote add file1.txt https://github.com/Nihanth316/dev.git
+error: remote file1.txt already exists.
+[root@ip-172-31-80-173 GIT]# git remote add file3.txt https://github.com/Nihanth316/dev.git
+error: remote file3.txt already exists.
+[root@ip-172-31-80-173 GIT]# ls
+dev  f1  f2  f3  f4  f5  file1.txt
+[root@ip-172-31-80-173 GIT]# git remote add f1  https://github.com/Nihanth316/dev.git
+error: remote f1 already exists.
+[root@ip-172-31-80-173 GIT]# touch ff1
+[root@ip-172-31-80-173 GIT]# git remote add ff1  https://github.com/Nihanth316/dev.git
+[root@ip-172-31-80-173 GIT]# ls
+dev  f1  f2  f3  f4  f5  ff1  file1.txt
+[root@ip-172-31-80-173 GIT]# git branch
+  Devops
+  checkout
+  dev
+  jenkins
+* main
+  master
+[root@ip-172-31-80-173 GIT]# ls
+dev  f1  f2  f3  f4  f5  ff1  file1.txt
+[root@ip-172-31-80-173 GIT]# git checkout Devops
+D       Git-private
+Switched to branch 'Devops'
+[root@ip-172-31-80-173 GIT]# ls
+dev  f1  f2  f3  f4  f5  ff1  file1.txt
+[root@ip-172-31-80-173 GIT]# git checkout main
+D       Git-private
+Switched to branch 'main'
+[root@ip-172-31-80-173 GIT]# touch ghg
+[root@ip-172-31-80-173 GIT]# git tag
+[root@ip-172-31-80-173 GIT]# git log
+commit 769aff4a4799fd6d805d1c5b30338dc81ba87037 (HEAD -> main, Devops)
+Author: Nihanth <nihanthgnkr@gmail.com>
+Date:   Fri Aug 5 16:03:33 2022 +0000
+
+    all
+
+commit 7102cbbec48c836ff89910413aa682f5f6c3c7cc (master, checkout)
+Author: Nihanth <nihanthgnkr@gmail.com>
+Date:   Thu Aug 4 18:07:29 2022 +0000
+
+    Revert "second file added"
+
+    This reverts commit 739de03c2c493ac2a81b3c88c57e538a9130d948.
+
+commit 739de03c2c493ac2a81b3c88c57e538a9130d948
+Author: Nihanth <root@ip-172-31-80-173.ec2.internal>
+Date:   Thu Aug 4 18:03:11 2022 +0000
+
+    second file added
+
+commit 26dd46a1b563ff97d4023337f3acba02a98a90a3
+Author: Nihanth <root@ip-172-31-80-173.ec2.internal>
+Date:   Thu Aug 4 18:00:11 2022 +0000
+
+    first file
+[root@ip-172-31-80-173 GIT]# git log --oneline
+769aff4 (HEAD -> main, Devops) all
+7102cbb (master, checkout) Revert "second file added"
+739de03 second file added
+26dd46a first file
+[root@ip-172-31-80-173 GIT]# git tag A1.2 739de03
+[root@ip-172-31-80-173 GIT]# git log --oneline
+769aff4 (HEAD -> main, Devops) all
+7102cbb (master, checkout) Revert "second file added"
+739de03 (tag: A1.2) second file added
+26dd46a first file
+[root@ip-172-31-80-173 GIT]# git merge master Devops
+Already up to date.
+[root@ip-172-31-80-173 GIT]# ls
+dev  f1  f2  f3  f4  f5  ff1  file1.txt  ghg
+[root@ip-172-31-80-173 GIT]# git branch
+  Devops
+  checkout
+  dev
+  jenkins
+* main
+  master
+[root@ip-172-31-80-173 GIT]# git checkout Devops
+D       Git-private
+Switched to branch 'Devops'
+[root@ip-172-31-80-173 GIT]# ls
+dev  f1  f2  f3  f4  f5  ff1  file1.txt  ghg
+[root@ip-172-31-80-173 GIT]# touch 21
+[root@ip-172-31-80-173 GIT]# touch 12 54 585
+[root@ip-172-31-80-173 GIT]# git merge Devops master
+Already up to date.
+[root@ip-172-31-80-173 GIT]# ls
+12  21  54  585  dev  f1  f2  f3  f4  f5  ff1  file1.txt  ghg
+[root@ip-172-31-80-173 GIT]# git checkout master
+Switched to branch 'master'
+[root@ip-172-31-80-173 GIT]# ls
+12  21  54  585  dev  ff1  file1.txt  ghg
+[root@ip-172-31-80-173 GIT]# git checkout dev
+Switched to branch 'dev'
+[root@ip-172-31-80-173 GIT]# ls
+12  21  54  585  dev  ff1  file1.txt  file2.txt  file3.txt  ghg  login.txt
+[root@ip-172-31-80-173 GIT]# git checkout jenkins
+Switched to branch 'jenkins'
+[root@ip-172-31-80-173 GIT]# ls
+12  21  54  585  dev  ff1  file1.txt  file2.txt  file3.txt  ghg  login.txt
+[root@ip-172-31-80-173 GIT]# git checkout checkout
+Switched to branch 'checkout'
+[root@ip-172-31-80-173 GIT]#
+[root@ip-172-31-80-173 GIT]# ls
+12  21  54  585  dev  ff1  file1.txt  ghg
+[root@ip-172-31-80-173 GIT]# git merge jenkins checkout
+Updating 7102cbb..28df173
+Fast-forward
+ file2.txt | 1 +
+ file3.txt | 0
+ login.txt | 1 +
+ 3 files changed, 2 insertions(+)
+ create mode 100644 file2.txt
+ create mode 100644 file3.txt
+ create mode 100644 login.txt
+[root@ip-172-31-80-173 GIT]#
+[root@ip-172-31-80-173 GIT]# git merge jenkins master
+Already up to date.
+[root@ip-172-31-80-173 GIT]# git merge jenkins dev
+Already up to date.
+[root@ip-172-31-80-173 GIT]# git merge jenkins Devops
+Merge made by the 'ort' strategy.
+ Git-private | 1 +
+ f1          | 0
+ f2          | 0
+ f3          | 0
+ f4          | 0
+ f5          | 0
+ 6 files changed, 1 insertion(+)
+ create mode 160000 Git-private
+ create mode 100644 f1
+ create mode 100644 f2
+ create mode 100644 f3
+ create mode 100644 f4
+ create mode 100644 f5
+[root@ip-172-31-80-173 GIT]# ls
+12  21  54  585  dev  f1  f2  f3  f4  f5  ff1  file1.txt  file2.txt  file3.txt  ghg  Git-private  login.txt
+[root@ip-172-31-80-173 GIT]# history
+    1  cd /nihanth
+    2  git log
+    3  git status
+    4  cat > file1.txt
+    5  cat file1.txt
+    6  git add .
+    7  git init
+    8  git config --global init.nihanth
+    9  ls
+   10  git config -- global
+   11  git config -- global init
+   12  git init
+   13  git branch -m "Nihanth"
+   14  ls
+   15  git config -- global init.Nihanth
+   16  git config --global init.Nihanth
+   17  ls
+   18  mkdir GIT
+   19  cd -
+   20  cd /GIT
+   21  ls
+   22  cd /GIT
+   23  cd GIT
+   24  git init
+   25  git config --global init
+   26  git config --global init.Nihanth
+   27  user.name Nihanth
+   28  clear
+   29  ls
+   30  git --version
+   31  git init
+   32  ls -al
+   33  clear
+   34  git config --global user.name
+   35  Nihanth
+   36  git config --global user.name "Nihanth"
+   37  git config --global user.mail "nihanthgnkr@gmail.com"
+   38  vim file1.txt
+   39  git status
+   40  git add file1.txt
+   41  git status
+   42  git commit -m "first file "
+   43  git log
+   44  touch file2.txt
+   45  git status
+   46  git add .
+   47  git status
+   48  git commit -m file2.txt "second file"
+   49  git add .
+   50  git commit -m "second file added"
+   51  git config --global user.name "Nihanth"
+   52  git config --global user.email "nihanthgnkr@gmail.com"
+   53  git log
+   54  git log -oneline
+   55  git log --oneline
+   56  git restore 739de03
+   57  git rm --cached file2.txt
+   58  ls
+   59  git status
+   60  git add .
+   61  git commit -m "delected"
+   62  git log --oneline
+   63  git revert 739de03
+   64  git log --oneline
+   65  ls
+   66  git branch
+   67  git branch Devops
+   68  git branch
+   69  git branch show
+   70  git branch
+   71  git branch checkout
+   72  ls
+   73  git branch
+   74  git checkout
+   75  ls
+   76  git branch jenkins
+   77  git branch
+   78  git branch -d show
+   79  git branch
+   80  git branch "master"
+   81  ch mode
+   82  git log
+   83  git version
+   84  yum install git -y
+   85  git log
+   86  sudo su
+   87  ls
+   88  cd
+   89  ls
+   90  git add file1.txt
+   91  git add file1.txt
+   92  git status
+   93  sudo su
+   94  mkdir nihanth
+   95  ls
+   96  cd /nihanth
+   97  cd ..
+   98  cd -
+   99  ls
+  100  cd -
+  101  ls
+  102  cd ..
+  103  cd -
+  104  cd ..
+  105  cd /nihanth
+  106  clear
+  107  cd /home
+  108  cd /home/ec2-user
+  109  ls
+  110  sudo su
+  111  ls
+  112  ls -al
+  113  ls -la
+  114  cd -
+  115  pwd
+  116  cd /GIT
+  117  cd /Nihanth
+  118  cd
+  119  ls
+  120  cd GIT
+  121  ls
+  122  ls
+  123  git log
+  124  git status
+  125  git add .
+  126  git commit -m "all"
+  127  git branch
+  128  ls
+  129  cat > file2
+  130  cat > file3.txt
+  131  rm file2
+  132  cat > file2.txt
+  133  ls
+  134  git checkout jenkins
+  135  ls
+  136  git branch
+  137  git cherry -pick file2.txt
+  138  ls
+  139  git branch Devops
+  140  ls
+  141  git add .
+  142  git commit -m "adding files"
+  143  git status
+  144  git log --oneline
+  145  git merge Devops to jenkins
+  146  git merge Devops  jenkins
+  147  ls
+  148  git merge master clear
+  149  clear
+  150  git branch
+  151  vim login.txt
+  152  git add .
+  153  git commit -m "login"
+  154  git status
+  155  git branch Devops
+  156  git checkout Devops
+  157  ls
+  158  git cherry -pick login.txt
+  159  git merge Devops master
+  160  ls
+  161  git checkout master
+  162  ls
+  163  git checkout jenkins
+  164  ls
+  165  git merge jenkins Devops
+  166  ls
+  167  pwd
+  168  git checkout Devops
+  169  ls
+  170  git cherry -pick "login.txt"
+  171  git status
+  172  git log
+  173  git add .
+  174  git commit -m "login.txt"
+  175  git log
+  176  git log --oneline
+  177  git cherry -pick "739de03"
+  178  ls
+  179  git branch
+  180  ls
+  181  git status
+  182  git checkout jenkins
+  183  ls
+  184  git merge jenkins Devops
+  185  ls
+  186  git checkout Devops
+  187  ls
+  188  ls
+  189  sudo
+  190  cd..
+  191  cd ..
+  192  ls
+  193  cd /GIT
+  194  sudo
+  195  sudo su
+  196  cd
+  197  ls
+  198  cd GIT
+  199  g
+  200  git log
+  201  git branch
+  202  ls
+  203  git clone git@github.com:Nihanth316/GIT-demo.git
+  204  git clone https://github.com/Nihanth316/Git-private.git
+  205  git clone https://github.com/Nihanth316/Git-private.git
+  206  git clone https://github.com/Nihanth316/Git-private.git
+  207  git clone https://github.com/Nihanth316/Git-private.git
+  208  ls
+  209  touch f1 f2 f3 f4 f5
+  210  gir add .
+  211  git add .
+  212  git status
+  213  git commit -m "all"
+  214  pwd
+  215  ls
+  216  git push
+  217  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
+  218  Nihanth316
+  219  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
+  220  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
+  221  git push
+  222  git push
+  223  clear
+  224  ls
+  225  git push
+  226  cd /Git-private
+  227  git Git-private
+  228  cd Git-private
+  229  ls
+  230  git push
+  231  git push
+  232  ls
+  233  ls
+  234  cd ..
+  235  cd ../..
+  236  ls
+  237  cd home
+  238  cd
+  239  ls
+  240  cd GIT
+  241  ls
+  242  cd jenkins
+  243  git push
+  244  git push
+  245  git push
+  246  git branch
+  247  git push
+  248  git push
+  249  git clone
+  250  git clone https://github.com/Nihanth316/jenkins.git
+  251  ls
+  252  cat linux commands List.pdf
+  253  cat Linux Commands List.pdf
+  254  cat README.md
+  255  git add .
+  256  git fetch
+  257  ls
+  258  ls -la
+  259  cd
+  260  ls
+  261  cg GIT
+  262  cd GIT
+  263  git log
+  264  git branch
+  265  git checkout jenkins
+  266  ls
+  267  git push
+  268  git clone https://github.com/Nihanth316/jenkins.git
+  269  ls
+  270  git push
+  271  git push file1.txt
+  272  git push --set -upstream file1.txt jenkins
+  273  git push origin jenkins
+  274  ls
+  275  git branch
+  276  git push origin jenkins
+  277  git push origin jenkins
+  278  git push origin jenkins
+  279  git pull
+  280  git pull jenkins
+  281  git log
+  282  ls
+  283  git push origin jenkins
+  284  cd jenkins
+  285  git push origin jenkins
+  286  cd
+  287  ls
+  288  pwd
+  289  cd jenkins
+  290  cd ..
+  291  cd jenkins
+  292  cd
+  293  cd -
+  294  ls
+  295  sudo su
+  296  ls
+  297  cd ..
+  298  ls
+  299  sudo su
+  300  ls
+  301  cd -
+  302  cd
+  303  ls
+  304  cd GIT
+  305  ls
+  306  git push
+  307  git branch
+  308  cd Git-private
+  309  ls
+  310  git push
+  311  git push
+  312  git push
+  313  git push
+  314  git pull
+  315  pwd
+  316  cd /GIT
+  317  cd -
+  318  pwd
+  319  cd ..
+  320  ls
+  321  sudo su
+  322  ls
+  323  cd ..
+  324  ls
+  325  ls
+  326  cd
+  327  ls
+  328  cd GIT
+  329  git branch
+  330  git push
+  331  git remote add file1.txt
+  332  git remote add file1.txt https://github.com/Nihanth316/dev.git
+  333  git remote add file3.txt https://github.com/Nihanth316/dev.git
+  334  ls
+  335  git remote add f1  https://github.com/Nihanth316/dev.git
+  336  touch ff1
+  337  git remote add ff1  https://github.com/Nihanth316/dev.git
+  338  ls
+  339  git branch
+  340  ls
+  341  git checkout Devops
+  342  ls
+  343  git checkout main
+  344  touch ghg
+  345  git tag
+  346  git log
+  347  git log --oneline
+  348  git tag A1.2 739de03
+  349  git log --oneline
+  350  git merge master Devops
+  351  ls
+  352  git branch
+  353  git checkout Devops
+  354  ls
+  355  touch 21
+  356  touch 12 54 585
+  357  git merge Devops master
+  358  ls
+  359  git checkout master
+  360  ls
+  361  git checkout dev
+  362  ls
+  363  git checkout jenkins
+  364  ls
+  365  git checkout checkout
+  366  ls
+  367  git merge jenkins checkout
+  368  git merge jenkins master
+  369  git merge jenkins dev
+  370  git merge jenkins Devops
+  371  ls
+  372  history
+[root@ip-172-31-80-173 GIT]# ls
+12  21  54  585  dev  f1  f2  f3  f4  f5  ff1  file1.txt  file2.txt  file3.txt  ghg  Git-private  login.txt
+[root@ip-172-31-80-173 GIT]# git checkout main
+Switched to branch 'main'
+[root@ip-172-31-80-173 GIT]# ls
+12  21  54  585  dev  f1  f2  f3  f4  f5  ff1  file1.txt  ghg  Git-private
+[root@ip-172-31-80-173 GIT]# ls
+12  21  54  585  dev  f1  f2  f3  f4  f5  ff1  file1.txt  ghg  Git-private
+[root@ip-172-31-80-173 GIT]#
